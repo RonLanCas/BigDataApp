@@ -1,48 +1,91 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-sca  le=1.0">
-    <title>BigData-MiProyecto</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    <link href="{{ url_for('static', filename='css/landingPage.css') }}" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BigData-MiProyecto</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous" />
+
+  <!-- Estilos personalizados -->
+  <style>
+    body {
+      background-color: #f0f4f8; /* fondo suave */
+      font-family: "Segoe UI", "Helvetica Neue", sans-serif;
+      color: #333;
+    }
+
+    .header {
+      background-color: #1d3557; /* azul oscuro */
+      color: white;
+    }
+
+    .header .nav-link {
+      color: #f1f1f1 !important;
+    }
+
+    .header .nav-link:hover {
+      color: #a8dadc !important;
+    }
+
+    h1, h4 {
+      color: #1d3557;
+    }
+
+    footer {
+      background-color: #e9ecef;
+      color: #555;
+      border-top: 2px solid #dee2e6;
+    }
+
+    a {
+      color: #1d3557;
+    }
+
+    a:hover {
+      color: #457b9d;
+    }
+  </style>
 </head>
 <body>
-    <header class="header">
-        <div class="container">
-            <div class="d-flex justify-content-between align-items-center">
-                <h1 class="h3 mb-0">BigData-MiProyecto</h1>
-                <nav>
-                    <ul class="nav">
-                        <li class="nav-item"><a class="nav-link" href="/buscador">Buscador</a></li>
-                        <li class="nav-item"><a class="nav-link" href="/about">Acerca de</a></li>
-                        <li class="nav-item"><a class="nav-link" href="/login">Ingresar</a></li>
-                        <li class="nav-item"><a class="nav-link" href="/contacto">Contacto</a></li>
-                    </ul>
-                </nav>
-            </div>
-        </div>
-    </header>
-
+  <header class="header py-3 shadow-sm">
     <div class="container">
-        <h1 class="text-center">
-            Bienvenidos al proyecto de BigData<BR> 
-                creado por XYZ<br> 
-                como parte de <br>
-                un proyecto de clase<br> 
-                En la maestría de Analítica de Datos <br>
-                De la Universidad Central</h1>
+      <div class="d-flex justify-content-between align-items-center">
+        <h1 class="h4 mb-0">BigData-MiProyecto</h1>
+        <nav>
+          <ul class="nav">
+            <li class="nav-item"><a class="nav-link" href="/buscador">Buscador</a></li>
+            <li class="nav-item"><a class="nav-link" href="/about">Acerca de</a></li>
+            <li class="nav-item"><a class="nav-link" href="/login">Ingresar</a></li>
+            <li class="nav-item"><a class="nav-link" href="/contacto">Contacto</a></li>
+          </ul>
+        </nav>
+      </div>
     </div>
+  </header>
 
-    <footer class="text-center">
-        <p class="mb-0">Creado por {{ creador }}</p>
-        <p class="mb-0" id="current-year"></p>
-        <p class="mb-0" id="version_app">{{ version }}</p>
-    </footer>
+  <main class="container my-5">
+    <h1 class="text-center">
+      Bienvenidos al proyecto de BigData<br />
+      creado por <strong>Ronal Ricardo Lancheros</strong><br />
+      como parte de la materia BigData<br />
+      en la Maestría de Analítica de Datos<br />
+      de la Universidad Central
+    </h1>
+  </main>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
-    <script>
-        document.getElementById('current-year').textContent = new Date().getFullYear();
-    </script>
+  <footer class="text-center py-4 mt-5">
+    <p class="mb-1">
+      Creado por <strong>Ronal Lancheros</strong> ·
+      <a href="https://github.com/RonLanCas" target="_blank">GitHub</a>
+    </p>
+    <p class="mb-0">© <span id="current-year"></span> · Versión: <span id="version_app">{{ version }}</span></p>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+  <script>
+    document.getElementById('current-year').textContent = new Date().getFullYear();
+  </script>
 </body>
-</html> 
+</html>
