@@ -22,8 +22,8 @@ CREATOR_APP = "Nombre del creador/ruta github"
 mongo_uri   = os.environ.get("MONGO_URI")
 
 if not mongo_uri:
-    #uri = "mongodb+srv://DbCentral:DbCentral2025@cluster0.vhltza7.mongodb.net/?appName=Cluster0"
-    uri         = "mongodb+srv://DbCentral:DbCentral2025@cluster0.vhltza7.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
+    #uri = "mongodb+srv://x7nZYdEw4l5CEaX8:x7nZYdEw4l5CEaX8@cluster0.fotm0.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
+    uri = "mongodb+srv://x7nZYdEw4l5CEaX8:x7nZYdEw4l5CEaX8@cluster0.fotm0.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
     mongo_uri   = uri
 
 # Función para conectar a MongoDB
@@ -39,8 +39,8 @@ def connect_mongo():
 
 # Configuración de Elasticsearch
 client = Elasticsearch(
-    "https://indexprueba-cb87f3.es.us-east-1.aws.elastic.cloud:443",
-    api_key="Q3VEYy1KWUJHdDB6RGdJR3gyc0g6cThLVzhJZS05eGxta0Q0NXQxTHYxZw=="
+    "https://bigdata-f18254.es.us-east-1.aws.elastic.cloud:443",
+    api_key="dDNjZ1FaY0JEeXJiN2NreG5kM1I6N3hBYnR1a0xGWWM4S2lHLXNkc0RuQQ=="
 )
 INDEX_NAME = "ucentral_test"
 
@@ -673,5 +673,8 @@ def search():
     except Exception as e:
         return jsonify({'error': str(e)}), 500
 
-if __name__ == '__main__':
-    app.run(debug=True)
+if __name__ == "__main__":
+    from pyngrok import ngrok
+    public_url = ngrok.connect(5000)
+    print(f"🚀 Tu app está disponible en: {public_url}")
+    app.run()
